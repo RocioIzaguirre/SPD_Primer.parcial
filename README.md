@@ -1,4 +1,5 @@
 ## Sistema de procesamiento de datos (Primer parcial)
+![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/primer%20parcial%20spd.png)
 
 ## Integrantes 
 - Tomás Alonso
