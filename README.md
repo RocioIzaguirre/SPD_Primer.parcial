@@ -80,12 +80,12 @@ int encontrarPrimoAnterior(int numeroInicial) {
 - [proyecto](https://www.tinkercad.com/things/iTWAIc2E8oB-parcialp2/editel?sharecode=w0u_H0nxvnT8rUE2MMIlaW9kSQX-LEVkb5tj0LduRa8)
 
 ### :computer: TERCERA PARTE
-# Proyecto: Agregar una fotorresistencia.
+# Proyecto: Fotorresistencia.
 ![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/Parte_3/Imagenes/Arduino_p3.png)
 
 # Descripción
 
-Modificamos la parte 1 y 2 agregando una fotorresistencia, esta se encendera cada vez que la luz baje.
+Modificamos la parte 1 y 2 agregando una fotorresistencia, esta encendera una luz (led) cada vez que la luz baje.
 
 # Función agregada
 
