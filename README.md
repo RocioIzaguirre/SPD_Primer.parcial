@@ -13,7 +13,7 @@
 ![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/Parte_1/Imagenes/Arduino_p1.png)
 
 
-# Descripción
+# :page_with_curl: Descripción
 Hicimos un contador de 0 a 99 utilizando dos displays de 7 segmentos y tres botones para
 controlar la cuenta. Implementamos la técnica de multiplexación para mostrar los dígitos
 en los displays. El contador comienza en 0 y es capaz de aumentar o disminuir
@@ -45,7 +45,7 @@ void mostrarContador(int contador){
 # Proyecto: Contador de 0 a 99. -> Modificación: Interruptor Deslizante, Números Primos, Motor y Sensor de temperatura.
 ![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/Parte_2/Imagenes/Arduino_p2.png)
 
-# Descripción
+# :page_with_curl: Descripción
 
 Modificamos la parte 1 quitando un boton y agregando un interruptor deslizante (switch) de dos posiciones.
 Dependiendo de la posición del interruptor, el display mostrara o bien el contador (como
@@ -83,7 +83,7 @@ int encontrarPrimoAnterior(int numeroInicial) {
 # Proyecto: Fotorresistencia.
 ![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/Parte_3/Imagenes/Arduino_p3.png)
 
-# Descripción
+# :page_with_curl: Descripción
 
 Modificamos la parte 1 y 2 agregando una fotorresistencia, esta encendera una luz (led) cada vez que la luz baje.
 
