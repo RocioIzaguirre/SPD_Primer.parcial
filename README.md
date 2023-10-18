@@ -1,4 +1,4 @@
-## Sistema de procesamiento de datos (Primer parcial)
+## Sistema de procesamiento de datos 
 ![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/primer%20parcial%20spd.png)
 
 ## Integrantes 
