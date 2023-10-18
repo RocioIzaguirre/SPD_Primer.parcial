@@ -23,16 +23,16 @@ mostrarContador(int contador) recibe el contador del segun el boton presionado e
 ~~~ C (lenguaje en el que esta escrito)
 void mostrarContador(int contador){
 	
-  	prenderSegmento(APAGADO);
-  	mostrarNumero(contador/10);
-    prenderSegmento(DECENA);
-    prenderSegmento(APAGADO);
-    mostrarNumero(contador - 10*((int)contador/10));
+	prenderSegmento(APAGADO);
+	mostrarNumero(contador/10);
+    	prenderSegmento(DECENA);
+    	prenderSegmento(APAGADO);
+    	mostrarNumero(contador - 10*((int)contador/10));
   	prenderSegmento(UNIDAD);
 }
 ~~~
 
-# :robot: Link al proyecto
+#  :bulb: Link al proyecto
 - [proyecto](https://www.tinkercad.com/things/4lFIXDyPHY5-parcialp1/editel?sharecode=VXzAnD9cqqI3S3z6hozVn4Gwyo1SRIBewK1CanuHU-w)
 
 
@@ -72,7 +72,7 @@ int esPrimo(int numero) {
 }
 ~~~
 
-# :robot: Link al proyecto
+#  :bulb: Link al proyecto
 - [proyecto](https://www.tinkercad.com/things/iTWAIc2E8oB-parcialp2/editel?sharecode=w0u_H0nxvnT8rUE2MMIlaW9kSQX-LEVkb5tj0LduRa8)
 
 
