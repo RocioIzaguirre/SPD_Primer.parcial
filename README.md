@@ -89,11 +89,18 @@ Modificamos la parte 1 y 2 agregando una fotorresistencia, esta encendera una lu
 
 # Función agregada
 
-Funciones encontrar proximo o anterior numero primo. 
-
+La luz se encendera
 
 ~~~ C (lenguaje en el que esta escrito)
-
+  lecturaFotorresistencia = analogRead(LECTURA_FOTORRESISTENCIA);
+  fotorresistencia = map(lecturaFotorresistencia,348,1017,1,10);
+  Serial.println(fotorresistencia);
+  if(fotorresistencia>7){
+  digitalWrite(LED_AMARILLO,HIGH);
+  }
+  else{
+  digitalWrite(LED_AMARILLO,LOW);
+  }
 ~~~
 
 #  :bulb: Link al proyecto
