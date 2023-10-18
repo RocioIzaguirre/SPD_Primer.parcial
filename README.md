@@ -7,7 +7,8 @@
 - Izaguirre Rocio 
 
 
-### PRIMERA PARTE
+### :computer: PRIMERA PARTE
+
 # Proyecto: Contador de 0 a 99 con Display 7 Segmentos y Multiplexación.
 ![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/Parte_1/Imagenes/Arduino_p1.png)
 
