@@ -8,7 +8,7 @@
 ### PRIMERA PARTE
 # Proyecto: Contador de 0 a 99 con Display 7 Segmentos y Multiplexación.
 ![Tinkercad]()
-![Tinkercad](https://github.com/TomiAlo/parcial_domicialiario_spd/blob/main/Parcial%20domilicario%20SPD/primera%20parte/img/arduino.png)
+![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/Parte_1/Imagenes/Arduino_p1.png)
 
 
 # Descripción
@@ -34,7 +34,7 @@ void mostrarContador(int contador){
 ~~~
 
 # :robot: Link al proyecto
-- [proyecto](https://www.tinkercad.com/things/7bqVfm3cuZj-tomas-alonso-parcial-domiciliario-primera-parte/editel?sharecode=RHi6H5vBMP38nDHCA2IBRw17-K7im3VYH2voxiM1qeE)
+- [proyecto](https://www.tinkercad.com/things/4lFIXDyPHY5-parcialp1/editel?sharecode=VXzAnD9cqqI3S3z6hozVn4Gwyo1SRIBewK1CanuHU-w)
 
 
 
