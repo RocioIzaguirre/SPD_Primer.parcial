@@ -67,8 +67,6 @@ int encontrarProximoPrimo(int numeroInicial) {
     numero++;
   }
 }
-//la funcion encontrarPrimoAnterior decrementa el numero hasta encontrar
-//el anterior numero primo
 int encontrarPrimoAnterior(int numeroInicial) {
   int numero = numeroInicial;
   while (true) {
@@ -83,7 +81,7 @@ int encontrarPrimoAnterior(int numeroInicial) {
 
 ### :computer: TERCERA PARTE
 # Proyecto: Agregar una fotorresistencia.
-![Tinkercad]()
+![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/Parte_3/Imagenes/Arduino_p3.png)
 
 # Descripción
 
