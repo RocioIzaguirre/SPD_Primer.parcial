@@ -41,7 +41,7 @@ void mostrarContador(int contador){
 
 ### SEGUNDA PARTE
 # Proyecto: Contador de 0 a 99 con Display 7 Segmentos y Multiplexación -> Modificación con Interruptor Deslizante, Números Primos, Motor y Sensor de temperatura.
-![Tinkercad](https://github.com/TomiAlo/parcial_domicialiario_spd/blob/main/Parcial%20domilicario%20SPD/segunda%20parte/img/arduino.png)
+![Tinkercad]()
 
 
 # Descripción
@@ -74,6 +74,6 @@ int esPrimo(int numero) {
 ~~~
 
 # :robot: Link al proyecto
-- [proyecto](https://www.tinkercad.com/things/kuIwrJLp3Ca-copy-of-tomas-alonso-parcial-domiciliario-primera-parte/editel?sharecode=ewSI4DiXY7VyP3ky_9xckHDwe7PtIVlhlXu0descZQc)
+- [proyecto](https://www.tinkercad.com/things/iTWAIc2E8oB-parcialp2/editel?sharecode=w0u_H0nxvnT8rUE2MMIlaW9kSQX-LEVkb5tj0LduRa8)
 
 
