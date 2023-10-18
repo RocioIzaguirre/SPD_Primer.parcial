@@ -1,0 +1,344 @@
+//"PRIMER PARCIAL"
+
+//Rocio Daniela Izaguirre DNI:38.983.972
+//Div:1°G
+
+//Diseñar un contador de 0 a 99 utilizando dos displays de 7 segmentos y tres botones para
+//controlar la cuenta. Debes implementar la técnica de multiplexación para mostrar los dígitos
+//en los displays. El contador debe comenzar en 0 y debe ser capaz de aumentar o disminuir
+//su valor en una unidad con los botones.
+
+//Modifica el proyecto de la Parte 1 de la siguiente manera:
+//Sustituye uno de los botones por un interruptor deslizante (switch) de dos posiciones.
+//Dependiendo de la posición del interruptor, el display debe mostrar o bien el contador (como
+//en la Parte 1) o los números primos en el rango de 0 a 99.
+
+//Considerando el último número de tu número de documento (DNI o documento de
+//identidad), agrega un componente adicional que afecte el funcionamiento del proyecto.
+//Describe en detalle qué hace este nuevo componente y cómo se integra en el proyecto.
+
+//Si tu número de documento termina en (0-3) deberás implementar a tu proyecto la
+//fotoresistencia
+
+//Defino los pins
+#define LED_A 12
+#define LED_B 13
+#define LED_C 7
+#define LED_D 8
+#define LED_E 9
+#define LED_F 11
+#define LED_G 10
+#define BAJA 3
+#define SUBE 4
+#define INTERUPTOR 2
+#define UNIDAD A4
+#define DECENA A5
+#define SENSOR_TEMPERATURA A0
+#define MOTOR 6
+#define LED_AMARILLO 5
+#define LECTURA_FOTORRESISTENCIA A2
+
+//Defino variables constantes
+#define APAGADO 0
+#define TIEMPO 10
+
+//inicializo variables
+int contador=0;
+int sube=1;
+int baja=1;
+int subePrevia=1;
+int bajaPrevia=1;
+int reinicioPrevio=1;
+int interuptorPrevio=1;
+int interuptor=2;
+int numero=0;
+int lecturaSensor;
+int temperatura;
+int lecturaFotorresistencia;
+int fotorresistencia;
+bool respuesta=false;
+//Defino cada pin como entrada o salida
+void setup()
+{
+  pinMode(INTERUPTOR,INPUT_PULLUP);
+  pinMode(SUBE,INPUT_PULLUP);
+  pinMode(BAJA,INPUT_PULLUP);
+  pinMode(LECTURA_FOTORRESISTENCIA,INPUT_PULLUP);  
+  pinMode(LED_C,OUTPUT);
+  pinMode(LED_B,OUTPUT);
+  pinMode(LED_A,OUTPUT);
+  pinMode(LED_G,OUTPUT);
+  pinMode(LED_F,OUTPUT);
+  pinMode(LED_D,OUTPUT);
+  pinMode(LED_E,OUTPUT);
+  pinMode(UNIDAD,OUTPUT);
+  pinMode(DECENA,OUTPUT);
+  pinMode(MOTOR,OUTPUT);
+  pinMode(LED_AMARILLO,OUTPUT);
+  //A unidad y decena les asigno el valor 0
+  digitalWrite(UNIDAD,LOW); 
+  digitalWrite(DECENA,LOW);
+  Serial.begin(9600);
+  Serial.println("Ingrese una opcion: ");
+  Serial.println("1 - Encender motor");
+  Serial.println("2 - Apagar motor");
+}
+
+//mostrarNumero recibe por parametro el contador
+//y lo digitaliza en el segmento
+void mostrarNumero(int numero);
+void mostrarNumero(int numero)
+{
+  
+  //se apagan todos los leds
+  digitalWrite(LED_A, LOW);
+  digitalWrite(LED_B, LOW);
+  digitalWrite(LED_C, LOW);
+  digitalWrite(LED_D, LOW);
+  digitalWrite(LED_E, LOW);
+  digitalWrite(LED_F, LOW);
+  digitalWrite(LED_G, LOW);
+  
+  //se encienden los leds formando el numero correspondiente  
+  switch(numero){
+    
+    case 0:
+    	digitalWrite(LED_A, HIGH);
+  		digitalWrite(LED_B, HIGH);
+    	digitalWrite(LED_F, HIGH);
+    	digitalWrite(LED_E, HIGH);
+    	digitalWrite(LED_D, HIGH);
+    	digitalWrite(LED_C, HIGH);
+    	break;
+  	case 1:
+    	digitalWrite(LED_B, HIGH);
+  		digitalWrite(LED_C, HIGH);
+		break;
+    case 2:
+    	digitalWrite(LED_A, HIGH);
+  		digitalWrite(LED_B, HIGH);
+    	digitalWrite(LED_G, HIGH);
+    	digitalWrite(LED_E, HIGH);
+    	digitalWrite(LED_D, HIGH);
+		break;
+    case 3:
+    	digitalWrite(LED_A, HIGH);
+  		digitalWrite(LED_B, HIGH);
+    	digitalWrite(LED_G, HIGH);
+    	digitalWrite(LED_C, HIGH);
+    	digitalWrite(LED_D, HIGH);
+    	break;
+    case 4:
+    	digitalWrite(LED_F, HIGH);
+  		digitalWrite(LED_B, HIGH);
+    	digitalWrite(LED_G, HIGH);
+    	digitalWrite(LED_C, HIGH);
+		break;
+    case 5:
+    	digitalWrite(LED_A, HIGH);
+  		digitalWrite(LED_F, HIGH);
+    	digitalWrite(LED_G, HIGH);
+    	digitalWrite(LED_C, HIGH);
+    	digitalWrite(LED_D, HIGH);
+    	break;
+    case 6:
+    	digitalWrite(LED_A, HIGH);
+  		digitalWrite(LED_F, HIGH);
+    	digitalWrite(LED_G, HIGH);
+    	digitalWrite(LED_C, HIGH);
+    	digitalWrite(LED_D, HIGH);
+    	digitalWrite(LED_E, HIGH);
+    	break;
+    case 7:
+    	digitalWrite(LED_A, HIGH);
+  		digitalWrite(LED_B, HIGH);
+    	digitalWrite(LED_C, HIGH);
+		break;
+    case 8:
+    	digitalWrite(LED_A, HIGH);
+  		digitalWrite(LED_B, HIGH);
+    	digitalWrite(LED_F, HIGH);
+    	digitalWrite(LED_E, HIGH);
+    	digitalWrite(LED_D, HIGH);
+    	digitalWrite(LED_C, HIGH);
+    	digitalWrite(LED_G, HIGH);
+    	break;
+    case 9:
+    	digitalWrite(LED_G, HIGH);
+  		digitalWrite(LED_B, HIGH);
+    	digitalWrite(LED_F, HIGH);
+    	digitalWrite(LED_A, HIGH);
+    	digitalWrite(LED_C, HIGH);
+    	break;    
+  }
+}
+
+//funcion antirebote para verificar los estados del boton, 
+//si se apreto y se solto, retorna el pin del boton correspondiente
+int antirebote(void);
+int antirebote(void){
+	sube = digitalRead(SUBE);//devuelve 0 si presiono, 1 si no presiono
+  	baja = digitalRead(BAJA);
+  
+  if(sube)
+    subePrevia=1;
+  
+  if(baja)
+    bajaPrevia=1;   
+  
+    if(sube==0 && sube!= subePrevia){
+      subePrevia=sube;
+      return SUBE;
+    }
+  
+    if(baja==0 && baja != bajaPrevia){
+      bajaPrevia=baja;
+      return BAJA;
+    }
+  return 0;
+}
+
+//funcion prenderSegmento recibe por parametro el segmento que va a encender
+void prenderSegmento(int segmento);
+void prenderSegmento(int segmento){
+  
+  if(segmento == UNIDAD){ //UNIDAD = A4
+  	digitalWrite(UNIDAD, LOW);
+    digitalWrite(DECENA, HIGH);
+    delay(TIEMPO);
+  }
+  
+  else if(segmento==DECENA){//DECENA = A5
+  	digitalWrite(UNIDAD, HIGH);
+    digitalWrite(DECENA, LOW);
+    delay(TIEMPO);
+  }
+  
+  else{
+  	digitalWrite(UNIDAD, HIGH);
+    digitalWrite(DECENA, HIGH);
+  }
+}
+
+//funcion mostrarContador recibe el contador del segun el boton presionado
+void mostrarContador(int contador);
+void mostrarContador(int contador){
+  
+  	prenderSegmento(APAGADO);
+  	mostrarNumero(contador/10);//contador se divide por 10 para obtener la cantidad de decenas
+    prenderSegmento(DECENA);
+  
+    prenderSegmento(APAGADO);
+    mostrarNumero(contador - 10*((int)contador/10));
+  	prenderSegmento(UNIDAD);
+    //a contador lo divido por 10
+    //y el resultado lo multiplico por 10 para obtener la cantida de decenas que debo restar a contador
+    //y asi poder obtener la unidad
+}
+//funcion esPrimo recibe un numero y retorna un 1 en caso de ser primo 
+int esPrimo(int numero) {
+  int cont_primo=0;
+  for(int i=1;i<=numero;i++)//divide a el numero por todos los numero anteriores a si mismo hasta llegar
+  {                         //a dividirse por si mismo 
+  	if (numero%i==0)        //Si el resto de alguna de esas divisiones es 0 lo sumo a mi contador
+    	cont_primo ++;
+  }
+  	if(cont_primo==2)  //Si mi contador es igual a dos es primo porque los numeros primos son divisibles
+    	return 1;     //solo por 1 y por si mismo.
+    else
+ 		return 0;
+}
+//la funcion encontrarProximoPrimo incrementa el numero hasta encontrar
+//el proximo numero primo
+int encontrarProximoPrimo(int numeroInicial) {
+  int numero = numeroInicial;
+  while (true) {
+    if (esPrimo(numero) == 1)
+      return numero;
+    numero++;
+  }
+}
+//la funcion encontrarPrimoAnterior decrementa el numero hasta encontrar
+//el anterior numero primo
+int encontrarPrimoAnterior(int numeroInicial) {
+  int numero = numeroInicial;
+  while (true) {
+    if (esPrimo(numero) == 1)
+      return numero;
+    numero--;
+  }
+}
+
+void loop() {
+  int interuptor = digitalRead(INTERUPTOR);
+  int botonPresionado = antirebote(); 
+//si el interuptor esta en 1 aumento y decremento el contador de 1 en 1
+  if (interuptor == HIGH) {
+    if (botonPresionado == SUBE) {
+      contador++;
+      if (contador > 99) {
+        contador = 0;
+      }
+    } else if (botonPresionado == BAJA) {
+      contador--;
+      if (contador < 0) {
+        contador = 99;
+      }
+    }
+//si el interuptor esta en 0 aumento y decremento el contador
+//solo mostrando los numeros primos
+  } else if (interuptor == LOW){
+    if (botonPresionado == SUBE){
+      contador++;
+      contador = encontrarProximoPrimo(contador);
+      if(contador>99){
+      contador=0;
+      contador = encontrarProximoPrimo(contador);
+      }
+    } else if (botonPresionado == BAJA){
+      contador--;
+      if(contador<2){
+      contador=99;
+    }
+      contador = encontrarPrimoAnterior(contador);
+    }   
+  }
+  mostrarContador(contador);
+  
+  if(Serial.available()>0){
+    char opcion = Serial.read();
+    if(opcion == '1'){
+    Serial.println("Encendiendo motor");
+      respuesta = true;
+    }
+    else if(opcion == '2'){
+    Serial.println("Motor apagado");
+      respuesta = false;
+    }
+  }
+  //Si encendemos el motor, este se encendera cuando la temperatura este 
+  //por debajo de los 25°C o por encima de los 30°C
+  if(respuesta == true){
+    lecturaSensor = analogRead(SENSOR_TEMPERATURA);
+    temperatura = map(lecturaSensor,20,358,-40,125);
+    if(temperatura < 25 || temperatura > 30){
+    digitalWrite(MOTOR,HIGH);
+    }
+    else{
+    digitalWrite(MOTOR,LOW);
+  }
+  }else{
+    digitalWrite(MOTOR,LOW);
+    }
+  //Cuando la luz baja en la fotorresistencia, disminuye la tension que circula
+  //y se enciende el led amarillo
+  lecturaFotorresistencia = analogRead(LECTURA_FOTORRESISTENCIA);
+  fotorresistencia = map(lecturaFotorresistencia,348,1017,1,10);
+  Serial.println(fotorresistencia);
+  if(fotorresistencia>7){
+  digitalWrite(LED_AMARILLO,HIGH);
+  }
+  else{
+  digitalWrite(LED_AMARILLO,LOW);
+  }
+}
