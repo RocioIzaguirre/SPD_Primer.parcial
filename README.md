@@ -2,9 +2,10 @@
 ![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/primer%20parcial%20spd.png)
 
 ## Integrantes 
-- Tomás Alonso
-- Rocio Izaguirre
-- Facundo Acevedo
+- Acevedo Facundo 
+- Alonso Tomas
+- Izaguirre Rocio 
+
 
 ### PRIMERA PARTE
 # Proyecto: Contador de 0 a 99 con Display 7 Segmentos y Multiplexación.
