@@ -40,7 +40,7 @@ void mostrarContador(int contador){
 
 ### SEGUNDA PARTE
 # Proyecto: Contador de 0 a 99 con Display 7 Segmentos y Multiplexación -> Modificación con Interruptor Deslizante, Números Primos, Motor y Sensor de temperatura.
-![Tinkercad]()
+![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/Parte_2/Imagenes/Arduino_p2.png)
 
 
 # Descripción
