@@ -77,7 +77,7 @@ int encontrarPrimoAnterior(int numeroInicial) {
 ~~~
 
 #  :bulb: Link al proyecto
-- [proyecto](https://www.tinkercad.com/things/aPytYa3sQz8-parcialp3/editel?sharecode=mWizTtkcN0jhysMXRFka33HydxYDKEHA5D0L-soYiSs)
+- [proyecto](https://www.tinkercad.com/things/iTWAIc2E8oB-parcialp2/editel?sharecode=w0u_H0nxvnT8rUE2MMIlaW9kSQX-LEVkb5tj0LduRa8)
 
 ### :computer: TERCERA PARTE
 # Proyecto: Agregar una fotorresistencia.
