@@ -43,7 +43,7 @@ void mostrarContador(int contador){
 
 ### :computer: SEGUNDA PARTE
 # Proyecto: Contador de 0 a 99. -> Modificación: Interruptor Deslizante, Números Primos, Motor y Sensor de temperatura.
-![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/Parte_3/Imagenes/Arduino_p3.png)
+![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/Parte_2/Imagenes/Arduino_p2.png)
 
 # Descripción
 
