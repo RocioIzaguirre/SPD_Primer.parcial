@@ -105,4 +105,36 @@ La luz se encendera
 #  :bulb: Link al proyecto
 - [proyecto](https://www.tinkercad.com/things/aPytYa3sQz8-parcialp3/editel?sharecode=mWizTtkcN0jhysMXRFka33HydxYDKEHA5D0L-soYiSs)
 
+- ### :computer: CUARTA PARTE
+
+# Proyecto: Utilizar el interruptor deslizante para encender y apagar todo el sistema.
+![Tinkercad](https://github.com/RocioIzaguirre/SPD_Primer.parcial/blob/main/spd/Parte_4/Imagenes/Arduino_4.png)
+
+
+# :page_with_curl: Descripción
+Modificamos la parte 1 , 2 y 3. El interruptor ahora encedera y apagara todo el sistema dependiendo de su posicion. 
+
+# Función principal
+
+El interruptor cuando se encuentra en LOW apaga todo el sistema. 
+
+~~~ C (lenguaje en el que esta escrito)
+else if (interuptor == LOW){
+        digitalWrite(LED_A, APAGADO);
+        digitalWrite(LED_B, APAGADO);
+	digitalWrite(LED_C, APAGADO);
+  	digitalWrite(LED_D, APAGADO);
+  	digitalWrite(LED_E, APAGADO);
+  	digitalWrite(LED_F, APAGADO);
+  	digitalWrite(LED_G, APAGADO);
+        digitalWrite(MOTOR, APAGADO);
+        digitalWrite(LED_AMARILLO, APAGADO);
+  
+  }
+}
+~~~
+
+#  :bulb: Link al proyecto
+- [proyecto](https://www.tinkercad.com/things/iasq3kgDCPr-parcialp4/editel?sharecode=h3-37Z46YOkpQFF8SFN_ECWYaMKvT3xVvPhWZTnwnjY)
+
 
