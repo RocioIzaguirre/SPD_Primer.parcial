@@ -2,7 +2,6 @@
 ![Tinkercad](https://github.com/RocioIzaguirre/Parcial_SPD_parte1/blob/main/spd/primer%20parcial%20spd.png)
 
 ## Integrantes 
-- Acevedo Facundo 
 - Alonso Tomas
 - Izaguirre Rocio 
 
